@@ -14,7 +14,6 @@ You can change the default text editor for git to the text editor of your choice
 
 - [Visual Studio Code](https://code.visualstudio.com/): A text editor which we will be writing our code in.
 - [Node.js](https://nodejs.org/en/): Used to run our javascript code.
-- [Yarn](https://classic.yarnpkg.com/en/docs/install/): Used to download packages that other people have written.
 
 ## Windows
 
@@ -33,14 +32,6 @@ A video of the setup process has been recorded for you if you get stuck. https:/
 - Follow the installation steps
 - Open the windows command prompt (search for cmd)
 - Verify that node is installed by running `node --version`. The node version (e.g. v12.16.0) should be returned.
-
-## Yarn
-
-- Download the windows installer from https://classic.yarnpkg.com/en/docs/install/#windows-stable
-- Run the installer once downloaded
-- Follow the installation steps
-- Open the windows command prompt (search for cmd)
-- Verify that yarn is installed by running `yarn --version`. The yarn version (e.g.v1.22.0) should be returned.
 
 ## MacOS
 
@@ -70,17 +61,7 @@ brew install node
 
 - Verify that node is installed by running `node --version`. The node version (e.g. v12.16.0) should be returned.
 
-### Yarn
-
-- Run the following command in the terminal
-
-```
-brew install yarn
-```
-
-- Verify that yarn is installed by running `yarn --version`. The yarn version (e.g. v1.22.0) should be returned.
-
-
+## This is the end of the pre-requisites! The steps below are for the practical, and you do NOT have to complete these right now (we'll go through them in the workshop)
 
 ## Part 2: Creating a blog
 

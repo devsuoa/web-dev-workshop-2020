@@ -37,10 +37,13 @@ A video of the setup process has been recorded for you if you get stuck. https:/
 
 A video of the setup process has been recorded for you if you get stuck. https://www.youtube.com/watch?v=Ntv5XS4NBfU
 
-We will use homebrew to install all of the software for mac. Install homebrew by pasting the following command into the terminal (spotlight and search for terminal).
+We will use homebrew to install all of the software for mac. Install homebrew by pasting the following two commands into the terminal (spotlight and search for terminal).
 
 ```
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
+```
+export PATH="/usr/local/bin:$PATH"
 ```
 
 ### Visual Studio Code

@@ -142,6 +142,7 @@ collections:
       - { name: date, label: Date, widget: datetime }
       - { name: title, label: Title }
       - { name: author, label: Author }
+      - { name: path, label: Path }
       - { name: body, label: Body, widget: markdown }
 ```
 
@@ -173,6 +174,7 @@ collections:
       - { name: date, label: Date, widget: datetime }
       - { name: title, label: Title }
       - { name: author, label: Author }
+      - { name: path, label: Path }
       - { name: body, label: Body, widget: markdown }
 ```
 

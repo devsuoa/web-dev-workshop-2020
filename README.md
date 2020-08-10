@@ -66,6 +66,192 @@ brew install node
 
 ## This is the end of the pre-requisites! The steps below are for the practical, and you do NOT have to complete these right now (we'll go through them in the workshop)
 
+## Part 1: Creating a personal portfolio
+
+### Installing Gatsby
+
+First, we need to install Gatsby by running the following command in your terminal:
+
+```
+npm install -g gatsby-cli
+```
+### Creating a blank application
+
+Next, we want to create a blank application by running the following command inside the directory where you want the app to live:
+
+```
+gatsby new my-portfolio https://github.com/devsuoa/devs-gatsby-starter.git
+```
+In this case, "my-portfolio" will be the name of our application; you can call it whatever you like. Note: if Gatsby asks you which package manager you would like to use, choose **npm**
+
+Let's run our application and see what it looks like by running these commands:
+
+```
+cd my-portfolio
+npm run start
+```
+If you see a blank page saying "Hello World", then you have successfully created a blank application to work on.
+
+### Exploring our application files
+
+Inside your application, you will find a "src" folder. All of the code for your website will live inside this folder. There will also be a folder called "pages" inside of src (i.e. src/pages). The files inside pages will act as the actual, navigable web-pages of your application. E.g., if you had a file called **blog**.js, you could open it by going to localhost:8000/**blog**
+
+There will be an existing page file called **index.js**. This file is the entry point of our application, i.e. the home page. 
+
+Let's have a quick look at the contents of index.js: 
+
+```
+import React from "react"
+
+export default function Home() {
+  return <div>Hello world!</div>
+}
+```
+The first line is an import statement stating that our application requires React. In React, web-pages take the form of functions, and these functions return an HTML element representing that page. In this file, we have a function called **Home** to represent the Home page, and it returns a single div element with the text "Hello world!"
+
+### Creating pages
+
+A personal portfolio usually contains the same information as your C.V., but it gives you the ability to go into greater depth. With that in mind, our portfolio will have the following pages:
+
+* Home - Talk about yourself and your interests, and give a short summary of what you've accomplished
+* Projects - Talk about any personal projects you've completed in as much detail as you'd like. 
+* Education - Summarise your education so far
+* Experience - Go over all relevant experience, and go into detail about what you accomplished
+* Blog
+
+Before we make any of the other pages, we're going to make the Home page. If you take a look at the design, you'll notice there's a header with links to all the other pages. This is something that we'll have on all our pages. To avoid repeating code, we can write it once and use it multiple times using **components**. Create a folder called components inside src (i.e. src/components), and inside of it create a file called **header.js**. The contents of that file will be:
+
+```
+import React from "react"
+import { Link  } from "gatsby";
+import "../styles.css"
+
+export default function Header() {
+    return (
+            <header>
+                <p className="name">John Smith</p>
+                <div className="navigation">
+                    <Link to="/">Home</Link>
+                    <Link to="/projects">Projects</Link>
+                    <Link to="/education">Education</Link>
+                    <Link to="/experience">Experience</Link>
+                    <Link to="/blog">Blog</Link>
+                </div>
+            <header>
+    )
+}
+```
+You will also need to create a file called **styles.css** inside the src folder (NOT inside components), and add the following styling:
+
+```
+*, body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #707070;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    height: 100px;
+    align-items: center;
+}
+
+.name {
+    padding: 0;
+    font-size: 36px;
+    font-weight: 700;
+    padding-left: 20px;
+}
+
+.navigation {
+    height: auto;
+    margin: 0 0 0 auto;
+}
+
+.navigation > a {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    margin: 10px;
+    font-size: 20px;
+    font-weight: 100;
+}
+```
+This new Header component is now ready to be used in our Home page. Replace the contents of the index.js file with the following:
+
+```
+import React from "react";
+
+import Header from "../components/header"
+import "../styles.css"
+
+export default function Home() {
+    return (
+        <div>
+            <Header />
+
+            <div className="container">
+                <h1>About Me</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris egestas elit a tellus porttitor,
+                id finibus ligula pulvinar. Phasellus nec posuere nisl. Vivamus ac turpis a velit vestibulum
+                lacinia eget ac dui. Nunc efficitur libero tortor, quis aliquam nunc tristique eu. In egestas
+                lectus a porta imperdie</p>
+
+                <h1>My Interests</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris egestas elit a tellus porttitor,
+                id finibus ligula pulvinar. Phasellus nec posuere nisl. Vivamus ac turpis a velit vestibulum
+                lacinia eget ac dui. Nunc efficitur libero tortor, quis aliquam nunc tristique eu. In egestas
+                lectus a porta imperdie</p>
+            </div>
+        <div/>
+    )
+}
+```
+And add the following styling to styles.css:
+
+```
+.container {
+    width: 65vw;
+    margin: 0 auto;
+}
+
+.container > h1 {
+    margin-top: 50px;
+}
+
+.container > p {
+    font-size: 18px;
+}
+```
+If you take a look at the app in the browser, you'll see a home page with a header on the top, and some text in the body. Of course, for your real portfolio, you would replace the dummy text with real information!
+
+To create the other pages, we'll simply duplicate the index.js file, rename it, and change the text content. For example, the Projects page will look like:
+
+*projects.js:*
+```
+import React from "react";
+
+import Header from "../components/header"
+import "../styles.css"
+
+export default function Projects() {
+    return (
+        <>
+            <Header />
+
+            <div className="container">
+                <h1>My Projects</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris egestas elit a tellus porttitor,
+                id finibus ligula pulvinar. Phasellus nec posuere nisl. Vivamus ac turpis a velit vestibulum
+                lacinia eget ac dui. Nunc efficitur libero tortor, quis aliquam nunc tristique eu. In egestas
+                lectus a porta imperdie</p>
+            </div>
+        </>
+    )
+}
+```
+In a similar manner, go ahead and create the remaining pages. For your real portfolio, you would modify each page's layout to suit the information on that page. For simplicity's sake, all our pages look similar, but you can choose to style yours however you like!
+
 ## Part 2: Creating a blog
 
 ### Uploading to Github
@@ -142,7 +328,6 @@ collections:
       - { name: date, label: Date, widget: datetime }
       - { name: title, label: Title }
       - { name: author, label: Author }
-      - { name: path, label: Path }
       - { name: body, label: Body, widget: markdown }
 ```
 
@@ -174,7 +359,6 @@ collections:
       - { name: date, label: Date, widget: datetime }
       - { name: title, label: Title }
       - { name: author, label: Author }
-      - { name: path, label: Path }
       - { name: body, label: Body, widget: markdown }
 ```
 

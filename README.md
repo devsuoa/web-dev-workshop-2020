@@ -236,7 +236,7 @@ import "../styles.css"
 
 export default function Projects() {
     return (
-        <>
+        <div>
             <Header />
 
             <div className="container">
@@ -246,7 +246,7 @@ export default function Projects() {
                 lacinia eget ac dui. Nunc efficitur libero tortor, quis aliquam nunc tristique eu. In egestas
                 lectus a porta imperdie</p>
             </div>
-        </>
+        <div/>
     )
 }
 ```

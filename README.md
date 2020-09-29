@@ -324,10 +324,11 @@ collections:
     label: Blog
     folder: blog
     create: true
-    fields:
+    fields: 
       - { name: date, label: Date, widget: datetime }
       - { name: title, label: Title }
       - { name: author, label: Author }
+      - { name: path, label: Path }
       - { name: body, label: Body, widget: markdown }
 ```
 
@@ -355,10 +356,11 @@ collections:
     label: Blog
     folder: blog
     create: true
-    fields:
+    fields: 
       - { name: date, label: Date, widget: datetime }
       - { name: title, label: Title }
       - { name: author, label: Author }
+      - { name: path, label: Path }
       - { name: body, label: Body, widget: markdown }
 ```
 

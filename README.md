@@ -137,7 +137,7 @@ export default function Header() {
                     <Link to="/experience">Experience</Link>
                     <Link to="/blog">Blog</Link>
                 </div>
-            <header>
+            </header>
     )
 }
 ```
@@ -203,7 +203,7 @@ export default function Home() {
                 lacinia eget ac dui. Nunc efficitur libero tortor, quis aliquam nunc tristique eu. In egestas
                 lectus a porta imperdie</p>
             </div>
-        <div/>
+        </div>
     )
 }
 ```
@@ -246,7 +246,7 @@ export default function Projects() {
                 lacinia eget ac dui. Nunc efficitur libero tortor, quis aliquam nunc tristique eu. In egestas
                 lectus a porta imperdie</p>
             </div>
-        <div/>
+        </div>
     )
 }
 ```
